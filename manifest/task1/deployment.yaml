@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-app
+  labels:
+    app: myapp
+    namespace: test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+     containers:
+      - name: multitool
+        image: wbitt/network-multitool:latest
+        volumeMounts:
+        - name: vol
+          mountPath: /etc/out
+      - name: busybox
+        image: busybox:latest
+        command: ['sh', '-c', 'while true; do echo HNetology! >> /etc/in/output.txt; sleep 5; done']
+        volumeMounts:
+        - name: vol
+          mountPath: /etc/in
+     volumes:
+      - name: vol
+        persistentVolumeClaim:
+          claimName: pvc-vol
