@@ -23,6 +23,7 @@
 
 ## Задание 2. Создать Deployment приложения, которое может хранить файлы на NFS с динамическим созданием PV.
 
-- [Манифест DaemonSet](https://github.com/garrkiss/storagek8s-1/blob/main/manifest/multitool-log-reader.yaml)
+- [Манифест Deployment](https://github.com/garrkiss/storagek8s-2/blob/main/manifest/task2/deployment-app.yaml)
+- [Манифест PVC](https://github.com/garrkiss/storagek8s-2/blob/main/manifest/task2/pvc-class.yaml)
 
-![Ссылка](https://github.com/garrkiss/storagek8s-1/blob/main/img/3.png)
+![Ссылка](https://github.com/garrkiss/storagek8s-2/blob/main/img/4.png)
